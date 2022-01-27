@@ -1,14 +1,23 @@
 <?php 
-$servername = "localhost";
-$username = "quantox";
-$password = "quantox22";
-$feedback = "";
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=quantox_test", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $feedback = "Connected successfully";
-  } catch(PDOException $e) {
-    $feedback = "Connection failed: " . $e->getMessage();
+class Connection {
+    public $servername = "localhost";
+    public $username = "quantox";
+    public $password = "quantox22";
+    public $database = "quantox_test";
+    
+    function db_connection(){
+        try {
+            $conn = new PDO("mysql:host=$this->servername;dbname=$this->database", $this->username, $this->password);
+            // set the PDO error mode to exception
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $conn;
+          } catch(PDOException $e) {
+            return "Connection failed: " . $e->getMessage();
+        }
+    }
+
 }
+
+
+
 ?>
