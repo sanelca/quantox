@@ -1,0 +1,32 @@
+{
+	"info": {
+		"_postman_id": "5e98bf68-951d-4a5d-9bdd-313086c585ab",
+		"name": "Quantox test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost/quantox?student=3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/quantox?student=3",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"quantox"
+					],
+					"query": [
+						{
+							"key": "student",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
